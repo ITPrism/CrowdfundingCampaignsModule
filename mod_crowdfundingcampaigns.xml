@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+	<name>MOD_CROWDFUNDINGCAMPAIGNS</name>
+	<author>Todor Iliev</author>
+	<copyright>Copyright (C) 2017 Todor Iliev ( ITPrism.com )</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.en.html GNU/GPLv3</license>
+	<authorEmail>todor@itprism.com</authorEmail>
+	<authorUrl>http://itprism.com</authorUrl>
+	<version>1.1</version>
+	<creationDate>18 December, 2018</creationDate>
+	<description><![CDATA[
+    <p>Crowdfunding Campaigns is a module that displays a list of specific projects - successfully funded, unsuccessfully funded, etc.</p>
+    <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive <strong>gifts</strong>, <strong>discount codes</strong>, information about <strong>updates</strong> and information about <strong>new ITPrism extensions</strong>.</p>
+    ]]></description>
+	
+    <help url="MOD_CROWDFUNDINGCAMPAIGNS_HELP_URL"/>
+
+	<files>
+	    <filename module="mod_crowdfundingcampaigns">mod_crowdfundingcampaigns.php</filename>
+
+        <folder>language</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+                <field name="statistic" default="successfully_funded" type="list" label="MOD_CROWDFUNDINGCAMPAIGNS_STATISTIC" description="MOD_CROWDFUNDINGCAMPAIGNS_STATISTIC_DESC">
+                    <option	value="successfully_funded">MOD_CROWDFUNDINGCAMPAIGNS_SUCCESSFULLY_FUNDED</option>
+                    <option	value="unsuccessfully_funded">MOD_CROWDFUNDINGCAMPAIGNS_UNSUCCESSFULLY_FUNDED</option>
+                </field>
+                <field name="results_limit" type="text" label="MOD_CROWDFUNDINGCAMPAIGNS_RESULTS_LIMIT" description="MOD_CROWDFUNDINGCAMPAIGNS_RESULTS_LIMIT_DESC" default="3" />
+                <field name="show_author" default="" type="list" class="chzn-color" label="JGLOBAL_SHOW_AUTHOR_LABEL" description="MOD_CROWDFUNDINGCAMPAIGNS_SHOW_AUTHOR_DESC">
+                    <option	value="">JGLOBAL_USE_GLOBAL</option>
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+                <field name="show_description" default="" type="list" class="chzn-color" label="MOD_CROWDFUNDINGCAMPAIGNS_SHOW_DESCRIPTION" description="MOD_CROWDFUNDINGCAMPAIGNS_SHOW_DESCRIPTION_DESC">
+                    <option	value="">JGLOBAL_USE_GLOBAL</option>
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+                <field name="show_info" type="list" class="chzn-color" label="MOD_CROWDFUNDINGCAMPAIGNS_SHOW_INFORMATION" description="MOD_CROWDFUNDINGCAMPAIGNS_SHOW_INFORMATION_DESC" default="1">
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+                <field name="show_readon" type="list" class="chzn-color" label="MOD_CROWDFUNDINGCAMPAIGNS_SHOW_READON" description="MOD_CROWDFUNDINGCAMPAIGNS_SHOW_READON_DESC" default="0">
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+                <field name="show_see_projects" type="list" class="chzn-color" label="MOD_CROWDFUNDINGCAMPAIGNS_SHOW_SEE_PROJECTS" description="MOD_CROWDFUNDINGCAMPAIGNS_SHOW_SEE_PROJECTS_DESC" default="0">
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+                <field name="title_length" type="text" label="MOD_CROWDFUNDINGCAMPAIGNS_TITLE_LENGTH" description="MOD_CROWDFUNDINGCAMPAIGNS_TITLE_LENGTH_DESC" default="" />
+                <field name="description_length" type="text" label="MOD_CROWDFUNDINGCAMPAIGNS_DESCRIPTION_LENGTH" description="MOD_CROWDFUNDINGCAMPAIGNS_DESCRIPTION_LENGTH_DESC" default="" />
+                <field name="image_type" type="list" label="MOD_CROWDFUNDINGCAMPAIGNS_IMAGE" description="MOD_CROWDFUNDINGCAMPAIGNS_IMAGE_DESC" default="square">
+                    <option value="none">MOD_CROWDFUNDINGCAMPAIGNS_NONE</option>
+                    <option value="square">MOD_CROWDFUNDINGCAMPAIGNS_SQUARE</option>
+                    <option value="small">MOD_CROWDFUNDINGCAMPAIGNS_SMALL</option>
+                    <option value="large">MOD_CROWDFUNDINGCAMPAIGNS_LARGE</option>
+                </field>
+                
+                <field name="image_link" type="radio" class="btn-group" label="MOD_CROWDFUNDINGCAMPAIGNS_IMAGE_LINK" description="MOD_CROWDFUNDINGCAMPAIGNS_IMAGE_LINK_DESC" default="0">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+			</fieldset>
+            <fieldset name="statistic" label="MOD_CROWDFUNDINGCAMPAIGNS_STATISTIC_OPTIONS">
+                <field name="period" type="text" default="3" label="MOD_CROWDFUNDINGCAMPAIGNS_STATISTIC_PERIOD" description="MOD_CROWDFUNDINGCAMPAIGNS_STATISTIC_PERIOD_DESC" />
+            </fieldset>
+			<fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field
+                    name="moduleclass_sfx"
+                    type="text"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                    
+                <field
+                    name="cache"
+                    type="list"
+                    default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field
+                    name="cache_time"
+                    type="text"
+                    default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"></option>
+                </field>
+            </fieldset>
+		</fields>
+	</config>
+
+    <updateservers>
+        <server type="extension" priority="1" name="Module - Crowdfunding Latest ( from CDN )">http://cdn.itprism.com/updates/crowdfunding/modules/mod_crowdfundinglatest.xml</server>
+    </updateservers>
+</extension>

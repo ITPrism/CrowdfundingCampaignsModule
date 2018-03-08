@@ -1,0 +1,60 @@
+/* Common styles */
+.cf-modcampaigns .relative {
+    position: relative;
+}
+
+.cf-modcampaigns .absolute-bottom{
+	position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cf-modcampaigns .bolder {
+	font-weight: bolder;
+}
+
+.cf-modcampaigns .uppercase {
+	text-transform: uppercase;
+}
+
+.cf-modcampaigns .font-xsmall {
+	font-size: x-small;
+}
+
+/* START Vertical layout styles */
+.cf-modcampaigns .cf-v-image {
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+.cf-modcampaigns .cf-v-project-80 {
+	float: left;
+	width: 80%;
+}
+
+.cf-modcampaigns .cf-v-project-100 {
+	float: left;
+	width: 100%;
+}
+/* END Vertical layout styles */
+
+/* START Horizontal layout styles */
+.cf-modcampaigns .cf-h-project {
+	height: 450px;
+	position: relative;
+}
+
+.cf-modcampaigns .cf-h-caption-info {
+	padding: 0 10px;
+	margin: 10px 0;
+	text-align: left;
+}
+
+.cf-modcampaigns .cf-h-project img {
+	display: block;
+	margin: 0 auto;
+}
+/* END Horizontal layout styles */
